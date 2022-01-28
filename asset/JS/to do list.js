@@ -36,15 +36,15 @@ var createNewTaskElement = function (taskString) {
 	
 
 	//Each elements, needs appending
-	listItem.className = "flex space-x-2 p-2 bg-white rounded-md";
+	listItem.className = "flex space-x-2 p-2 bg-white rounded-md my-4";
 
 	checkBox.type = "checkbox";
-	checkBox.className = "form-checkbox h-10 w-10 text-indigo-600";
+	checkBox.className = "mt-3 text-indigo-600";
 
 	editInput.type = "text";
 	editInput.className = " flex space-x-2 p-2 bg-white rounded-md  w-full outline-none";
 
-	label.className = "test";
+	label.className = "mt-2";
 
 	editButton.innerText = "Edit"; //innerText encodes special characters, HTML does not.
 	editButton.className = "edit bg-blue-500 px-2 py-1 rounded-md text-white font-semibold m-4";
@@ -100,12 +100,16 @@ var editTask = function () {
 		//switch to .editmode
 		//label becomes the inputs value.
 		label.innerText = editInput.value;
+		
 	} else {
 		editInput.value = label.innerText;
+		
 	}
 
 	//toggle .editmode on the parent.
 	listItem.classList.toggle("editMode");
+
+	
 }
 
 
